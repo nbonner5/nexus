@@ -62,15 +62,15 @@ function App() {
             <Route path="/" element={<span className="nexus-welcome">Welcome! Select a component to test.</span>} />
             <Route path="/button" element={
               <div style={{ display: 'flex', gap: '1em', alignItems: 'center', flexWrap: 'wrap' }}>
-                <Button label="Primary Button" onClick={() => alert('Primary clicked!')} variant="primary" />
-                <Button label="Secondary Button" onClick={() => alert('Secondary clicked!')} variant="secondary" />
-                <Button label="Tertiary Button" onClick={() => alert('Tertiary clicked!')} variant="tertiary" />
-                <Button label="Danger Button" onClick={() => alert('Danger clicked!')} variant="danger" />
-                <Button label="Success Button" onClick={() => alert('Success clicked!')} variant="success" />
-                <Button label="Warning Button" onClick={() => alert('Warning clicked!')} variant="warning" />
-                <Button label="Disabled Button" onClick={() => {}} variant="primary" disabled />
-                <Button label="Loading Button" onClick={() => {}} variant="primary" loading />
-                <Button icon={<span style={{fontSize: '1.2em'}}>★</span>} onClick={() => alert('Icon clicked!')} variant="icon" />
+                <Button variant="primary" onClick={() => alert('Primary clicked!')}>Primary Button</Button>
+                <Button variant="secondary" onClick={() => alert('Secondary clicked!')}>Secondary Button</Button>
+                <Button variant="tertiary" onClick={() => alert('Tertiary clicked!')}>Tertiary Button</Button>
+                <Button variant="danger" onClick={() => alert('Danger clicked!')}>Danger Button</Button>
+                <Button variant="success" onClick={() => alert('Success clicked!')}>Success Button</Button>
+                <Button variant="warning" onClick={() => alert('Warning clicked!')}>Warning Button</Button>
+                <Button variant="primary" disabled>Disabled Button</Button>
+                <Button variant="primary" loading>Loading Button</Button>
+                <Button variant="icon" icon={<span style={{fontSize: '1.2em'}}>★</span>} onClick={() => alert('Icon clicked!')} />
               </div>
             } />
           </Routes>

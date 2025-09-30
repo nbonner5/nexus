@@ -2,7 +2,7 @@ import React from "react";
 import "./Button.css";
 
 export interface ButtonProps {
-  label?: string;
+  children?: React.ReactNode;
   icon?: React.ReactNode;
   onClick?: () => void;
   variant?: "primary" | "secondary" | "tertiary" | "danger" | "success" | "warning" | "icon";
@@ -10,7 +10,7 @@ export interface ButtonProps {
   loading?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, icon, onClick, variant = "primary", disabled, loading }) => (
+const Button: React.FC<ButtonProps> = ({ children, icon, onClick, variant = "primary", disabled, loading }) => (
   <button
     className={`btn btn--${variant}${disabled ? " btn--disabled" : ""}`}
     onClick={onClick}
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({ label, icon, onClick, variant = "primar
     aria-busy={loading ? "true" : undefined}
   >
     {variant === "icon" && icon}
-    {loading ? <span className="btn__spinner" /> : label}
+    {loading ? <span className="btn__spinner" /> : children}
   </button>
 );
 
