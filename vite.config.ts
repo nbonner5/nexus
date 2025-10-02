@@ -9,7 +9,8 @@ export default defineConfig({
       name: 'nexus',
       filename: 'remoteEntry.js',
       exposes: {
-        './Button': './src/components/Button.tsx',
+        './Button': './src/components/Button/Button.tsx',
+        './Card': './src/components/Card/Card.tsx'
       },
       shared: ['react', 'react-dom']
     })
