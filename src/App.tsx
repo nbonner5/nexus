@@ -1,10 +1,12 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
-import Button from './components/Button';
+import Button from './components/Button/Button';
+import Card from './components/Card/Card';
 import './App.css';
 
 const components = [
   { name: 'Button', path: '/button' },
+  { name: 'Card', path: '/card' },
   // Add more components here as needed
 ];
 
@@ -71,6 +73,24 @@ function App() {
                 <Button variant="primary" disabled>Disabled Button</Button>
                 <Button variant="primary" loading>Loading Button</Button>
                 <Button variant="icon" icon={<span style={{fontSize: '1.2em'}}>★</span>} onClick={() => alert('Icon clicked!')} />
+              </div>
+            } />
+            <Route path="/card" element={
+              <div className='nexus-content'>
+                <Card
+                  image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  title="Project Alpha"
+                  description="A modern web app for managing tasks and productivity."
+                  link=""
+                  linkLabel="View Alpha"
+                />
+                <Card
+                  image="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                  title="Project Beta"
+                  description="A collaborative platform for creative teams."
+                  link=""
+                  linkLabel="View Beta"
+                />
               </div>
             } />
           </Routes>
