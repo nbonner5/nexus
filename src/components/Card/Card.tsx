@@ -8,10 +8,11 @@ export interface CardProps {
   description: string;
   link: string;
   linkLabel?: string;
+  theme?: "light" | "dark";
 }
 
-const Card: React.FC<CardProps> = ({ image, title, description, link, linkLabel = "View Project" }) => (
-  <div className="card">
+const Card: React.FC<CardProps> = ({ image, title, description, link, linkLabel = "View Project", theme }) => (
+  <div className={`card${theme ? ` card--${theme}` : ""}`}> 
     <img src={image} alt={title} className="card__image" />
     <div className="card__body">
       <h3 className="card__title">{title}</h3>
