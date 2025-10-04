@@ -2,11 +2,15 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Button from './components/Button/Button';
 import Card from './components/Card/Card';
+import Input from './components/Input/Input';
+import Textarea from './components/Textarea/Textarea';
 import './App.css';
 
 const components = [
   { name: 'Button', path: '/button' },
   { name: 'Card', path: '/card' },
+  { name: 'Input', path: '/input' },
+  { name: 'Textarea', path: '/textarea' },
   // Add more components here as needed
 ];
 
@@ -101,6 +105,21 @@ function App() {
                   linkLabel="View Gamma"
                   theme={theme.mode}
                 />
+              </div>
+            } />
+            <Route path="/input" element={
+              <div style={{ display: 'flex', gap: '2em', justifyContent: 'center', alignItems: 'stretch', flexWrap: 'nowrap' }}>
+                <Input label="Username" placeholder="Enter your username" />
+                <Input label="Email" type="email" placeholder="Enter your email" />
+                <Input label="Password" type="password" placeholder="Enter your password" />
+                <Input label="Disabled Input" placeholder="Can't type here" disabled />
+              </div>
+            } />
+            <Route path="/textarea" element={
+              <div style={{ display: 'flex', gap: '2em', justifyContent: 'center', alignItems: 'stretch', flexWrap: 'nowrap' }}>
+                <Textarea label="About You" placeholder="Tell us about yourself..." rows={4} />
+                <Textarea label="Feedback" placeholder="Your feedback is valuable to us..." rows={4} />
+                <Textarea label="Disabled Textarea" placeholder="Can't type here" rows={4} disabled />
               </div>
             } />
           </Routes>

@@ -1,0 +1,22 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.input-label {
+  font-size: 1em;
+  color: var(--main-color, #222);
+}
+.input {
+  padding: 0.7em 1em;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1em;
+  background: var(--main-bg, #fff);
+  color: var(--main-color, #222);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input:focus {
+  border-color: var(--accent, #6366f1);
+}
