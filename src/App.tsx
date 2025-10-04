@@ -1,9 +1,10 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
-import Button from './components/Button/Button';
-import Card from './components/Card/Card';
-import Input from './components/Input/Input';
-import Textarea from './components/Textarea/Textarea';
+import Home from './pages/Home/Home';
+import ButtonDemo from './pages/ButtonDemo/ButtonDemo';
+import CardDemo from './pages/CardDemo/CardDemo';
+import InputDemo from './pages/InputDemo/InputDemo';
+import TextareaDemo from './pages/TextareaDemo/TextareaDemo';
 import './App.css';
 
 const components = [
@@ -65,63 +66,11 @@ function App() {
       <main className="nexus-main">
         <div className="nexus-content">
           <Routes>
-            <Route path="/" element={<span className="nexus-welcome">Welcome! Select a component to test.</span>} />
-            <Route path="/button" element={
-              <div style={{ display: 'flex', gap: '1em', alignItems: 'center', flexWrap: 'wrap' }}>
-                <Button variant="primary" onClick={() => alert('Primary clicked!')}>Primary Button</Button>
-                <Button variant="secondary" onClick={() => alert('Secondary clicked!')}>Secondary Button</Button>
-                <Button variant="tertiary" onClick={() => alert('Tertiary clicked!')}>Tertiary Button</Button>
-                <Button variant="danger" onClick={() => alert('Danger clicked!')}>Danger Button</Button>
-                <Button variant="success" onClick={() => alert('Success clicked!')}>Success Button</Button>
-                <Button variant="warning" onClick={() => alert('Warning clicked!')}>Warning Button</Button>
-                <Button variant="primary" disabled>Disabled Button</Button>
-                <Button variant="primary" loading>Loading Button</Button>
-                <Button variant="icon" icon={<span style={{fontSize: '1.2em'}}>★</span>} onClick={() => alert('Icon clicked!')} />
-              </div>
-            } />
-            <Route path="/card" element={
-              <div style={{ display: 'flex', gap: '2em', justifyContent: 'center', alignItems: 'stretch', flexWrap: 'nowrap' }}>
-                <Card
-                  image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-                  title="Project Alpha"
-                  description="A modern web app for managing tasks and productivity."
-                  link="https://example.com/project-alpha"
-                  linkLabel="View Alpha"
-                  theme={theme.mode}
-                />
-                <Card
-                  image="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
-                  title="Project Beta"
-                  description="A collaborative platform for creative teams."
-                  link="https://example.com/project-beta"
-                  linkLabel="View Beta"
-                  theme={theme.mode}
-                />
-                <Card
-                  image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
-                  title="Project Gamma"
-                  description="This project is a comprehensive solution for remote teams, offering advanced features for communication, file sharing, project tracking, and more. With a robust API, customizable dashboards, and real-time notifications, Gamma helps teams stay productive and connected across time zones."
-                  link="https://example.com/project-gamma"
-                  linkLabel="View Gamma"
-                  theme={theme.mode}
-                />
-              </div>
-            } />
-            <Route path="/input" element={
-              <div style={{ display: 'flex', gap: '2em', justifyContent: 'center', alignItems: 'stretch', flexWrap: 'nowrap' }}>
-                <Input label="Username" placeholder="Enter your username" />
-                <Input label="Email" type="email" placeholder="Enter your email" />
-                <Input label="Password" type="password" placeholder="Enter your password" />
-                <Input label="Disabled Input" placeholder="Can't type here" disabled />
-              </div>
-            } />
-            <Route path="/textarea" element={
-              <div style={{ display: 'flex', gap: '2em', justifyContent: 'center', alignItems: 'stretch', flexWrap: 'nowrap' }}>
-                <Textarea label="About You" placeholder="Tell us about yourself..." rows={4} />
-                <Textarea label="Feedback" placeholder="Your feedback is valuable to us..." rows={4} />
-                <Textarea label="Disabled Textarea" placeholder="Can't type here" rows={4} disabled />
-              </div>
-            } />
+            <Route path="/" element={<Home />} />
+            <Route path="/button" element={<ButtonDemo />} />
+            <Route path="/card" element={<CardDemo theme={theme.mode} />} />
+            <Route path="/input" element={<InputDemo />} />
+            <Route path="/textarea" element={<TextareaDemo />} />
           </Routes>
         </div>
       </main>
