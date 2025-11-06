@@ -6,13 +6,15 @@ export interface CardProps {
   image: string;
   title: string;
   description: string;
+  width?: number;
+  height?: number;
   link?: string;
   linkLabel?: string;
   theme?: "light" | "dark";
   onAction?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ image, title, description, link, linkLabel = "View Project", theme, onAction }) => {
+const Card: React.FC<CardProps> = ({ image, title, description, link, width = 340, height = 190, linkLabel = "View Project", theme, onAction }) => {
   const handleClick = () => {
     if (onAction) {
       onAction();
@@ -23,7 +25,7 @@ const Card: React.FC<CardProps> = ({ image, title, description, link, linkLabel 
 
   return (
     <div className={`card${theme ? ` card--${theme}` : ""}`}> 
-      <img src={image} alt={title} className="card__image" />
+      <img src={image} alt={title} className="card__image" width={width} height={height} />
       <div className="card__body">
         <h3 className="card__title">{title}</h3>
         <p className="card__desc">{description}</p>
