@@ -1,20 +1,24 @@
 /* APP-SPECIFIC STYLES */
 /* Theme variables */
-:root {
+html.light {
   --sidebar-bg: linear-gradient(180deg, #1e293b 0%, #334155 100%);
   --sidebar-color: #fff;
   --link-color: #e0e7ef;
-  --accent: #38bdf8;
+  --accent: #0284c7;
+  --accent-secondary: #0369a1;
   --main-bg: #f8fafc;
   --main-color: #334155;
+  --secondary-color: #334155;
 }
-.app-dark {
+html.dark {
   --sidebar-bg: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
   --sidebar-color: #e0e7ef;
   --link-color: #38bdf8;
   --accent: #0ea5e9;
+  --accent-secondary: #7dd3fc;
   --main-bg: #1e293b;
   --main-color: #e0e7ef;
+  --secondary-color: #334155;
 }
 
 .app-container {
